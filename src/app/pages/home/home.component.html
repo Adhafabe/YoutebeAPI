@@ -1,0 +1,29 @@
+<h1>Aprende C#</h1>
+<hr />
+
+<div class="card-columns">
+    <div class="card h-100 animate__animated animate__fadeIn" *ngFor="let item of list">
+        <img [src]="item.thumbnails.high.url" class="card-img-top" alt="item.title" />
+        <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">
+                <span class="badge badge-warning">Autor:</span> {{ item.channelTitle }}
+            </p>
+
+            <p class="card-text">
+                <span class="badge badge-warning">Publicado:</span> {{ item.publishedAt | date }}
+            </p>
+            <button (click)="mostrarVideo(item)" class="btn btn-outline-info btn-block">
+        Ver video
+      </button>
+        </div>
+    </div>
+</div>
+
+<div class="row my-5 text-center">
+    <div class="col">
+        <button (click)="cargarVideos()" class="btn btn-outline-success">
+      Mostrar mas videos
+    </button>
+    </div>
+</div>
